@@ -18,7 +18,7 @@ function traveral(element: HTMLElement, tree : [], tagList: string[]) {
     
 }
 
-function getTopParent() :HTMLElement {
+function getTopParent() :HTMLElement|null {
     let markdown = document.querySelector('.markdown-body');
     return markdown || document.body || null;
 }
