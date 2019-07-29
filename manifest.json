@@ -6,6 +6,14 @@
        "default_icon": "icon.png",
        "default_popup": "popup.html"
     },
+    "content_scripts": [
+      {
+        "matches": ["https://github.com/*"],
+        "css": ["src/index.css"],
+        "js": ["src/index.js"]
+      }
+    ],
+   
     "description": "github readme outline",
     "manifest_version": 2,
     "name": "lk-notes",

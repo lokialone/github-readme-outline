@@ -4,7 +4,8 @@
   "description": "readme outline",
   "main": "background.js",
   "scripts": {
-    "dev": "parcel exmaple/index.html"
+    "dev": "parcel exmaple/index.html",
+    "build": "tsc src/index.ts"
   },
   "author": "lokialone",
   "license": "ISC",
