@@ -1,0 +1,14 @@
+{
+  "name": "article-outline",
+  "version": "1.0.0",
+  "description": "readme outline",
+  "main": "background.js",
+  "scripts": {
+    "dev": "parcel exmaple/index.html"
+  },
+  "author": "lokialone",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^3.5.3"
+  }
+}
