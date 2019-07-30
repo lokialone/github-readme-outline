@@ -10,9 +10,10 @@
     min-height: 100vh;
     background: #f5f5f5;
     padding: 16px;
-}
-
-
+    width: 280px;
+    -webkit-animation: fadein 0.1s;
+    animation: fadein 0.1s;
+}  
 .LK-A {
     text-decoration: none;
     color: #1a1a1a;
@@ -53,8 +54,8 @@
     position: absolute;
     right:0;
     top: 50%;
-    width: 20px;
-    height: 10px;
+    width: 28px;
+    height: 16px;
     /* border: 1px solid red; */
     background-image: url(../icon.png);
     background-size: contain;
@@ -68,4 +69,17 @@
 }
 .LK-SHOW {
     display: block;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }

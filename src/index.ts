@@ -36,6 +36,13 @@ function template(array) :string{
 }
 
 // not pure at all.
+function changeContentState(dom) {
+    if (dom.className === 'lk-content LK-HIDE') {
+        dom.className = 'lk-content LK-SHOW'
+    } else {
+        dom.className = 'lk-content LK-HIDE'
+    }
+}
 function createDom(templates) {
     let domc = document.createElement('div');
     domc.className = 'lk-outline-container';
@@ -46,27 +53,30 @@ function createDom(templates) {
 
     let operate = document.createElement('div');
     operate.className = 'LK-OPERATE LK-SHOW';
-    operate.addEventListener('click', () => {
-        if (content.className === 'lk-content LK-HIDE') {
-            content.className = 'lk-content LK-SHOW'
-        } else {
-            content.className = 'lk-content LK-HIDE'
-        }
+    operate.addEventListener('mouseover', () => {
+        changeContentState(content);
     });
+
+    content.addEventListener('mouseleave', () => {
+        content.className = 'lk-content LK-HIDE';
+    })
 
     domc.appendChild(content);
     domc.appendChild(operate);
     document.body.append(domc); 
 } 
 
-
-document.addEventListener('DOMContentLoaded',() =>{
+function init() {
     let parent: HTMLElement = getTopParent();
     if (!parent || !parent.firstElementChild) return;
-    const hTagList: string[] = createHTagList(6);
+    // const hTagList: string[] = createHTagList(6);
+    const hTagList = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6'];
     const tree = traveral(parent.firstElementChild, [], hTagList);
     if (tree.length) {
         const templates = template(tree);
         createDom(templates);
-    }    
-});
+    }
+}
+
+export default init;
+init();
