@@ -36,13 +36,6 @@ function template(array) :string{
 }
 
 // not pure at all.
-function changeContentState(dom) {
-    if (dom.className === 'lk-content LK-HIDE') {
-        dom.className = 'lk-content LK-SHOW'
-    } else {
-        dom.className = 'lk-content LK-HIDE'
-    }
-}
 function createDom(templates) {
     let domc = document.createElement('div');
     domc.className = 'lk-outline-container';
@@ -54,9 +47,19 @@ function createDom(templates) {
     let operate = document.createElement('div');
     operate.className = 'LK-OPERATE LK-SHOW';
     operate.addEventListener('mouseover', () => {
-        changeContentState(content);
+        if (content.className === 'lk-content LK-HIDE') {
+            content.className = 'lk-content LK-SHOW'
+        } else {
+            content.className = 'lk-content LK-HIDE'
+        }
     });
-
+    operate.addEventListener('click', () => {
+        if (content.className === 'lk-content LK-HIDE') {
+            content.className = 'lk-content LK-SHOW'
+        } else {
+            content.className = 'lk-content LK-HIDE'
+        }
+    });
     content.addEventListener('mouseleave', () => {
         content.className = 'lk-content LK-HIDE';
     })
@@ -78,5 +81,5 @@ function init() {
     }
 }
 
-export default init;
+// export default init;
 init();
