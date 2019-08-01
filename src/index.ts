@@ -1,7 +1,7 @@
 function traveral(element: HTMLElement, tree : [], tagList: string[]) {
     if (!element) return;
     let child: HTMLElement = element
-    if (tagList.includes(child.tagName)) {
+    if (tagList.includes(child.tagName) && child.firstElementChild) {
         tree.push({
             label: child.tagName,
             text: child.textContent,
