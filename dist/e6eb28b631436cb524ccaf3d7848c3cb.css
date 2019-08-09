@@ -3,8 +3,9 @@
     width: 280px;
     top: 0;
     right: 0;
-    min-height: 100vh;
+    height: 100vh;
     z-index: 9999;
+    overflow: scroll;
 }
 .lk-content {
     min-height: 100vh;
@@ -51,7 +52,7 @@
 }
 
 .LK-OPERATE {
-    position: absolute;
+    position: fixed;
     right:0;
     top: 50%;
     width: 28px;

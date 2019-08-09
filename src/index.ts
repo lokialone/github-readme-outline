@@ -41,7 +41,7 @@ function createDom(templates) {
     domc.className = 'lk-outline-container';
 
     let content = document.createElement('div');
-    content.className = 'lk-content LK-HIDE';
+    content.className = 'lk-content LK-SHOW';
     content.innerHTML = templates;
 
     let operate = document.createElement('div');
@@ -69,7 +69,7 @@ function createDom(templates) {
     document.body.append(domc); 
 } 
 
-function init() {
+function init() :void {
     let parent: HTMLElement = getTopParent();
     if (!parent || !parent.firstElementChild) return;
     // const hTagList: string[] = createHTagList(6);
